@@ -16,6 +16,10 @@ def handle_response(message, name) -> str:
 
     #TODO: Change the logic to first check for context, if correct context found, look for number (time)
     #Once time found, call format time to handle reformatting time and storing correct values
+    #confirm context -> be on, getting on, etc...
+    #refine context -> at/around, in, etc...
+        #if in context found, look for units hrs,hours,min,minutes, default min
+    #find number in text -> add time (if necessary) -> format time
     pattern = "(be on)( at| around)+ ([0-9]+:[0-9]+|[0-9]+)"
     time = re.compile(pattern)
     if time.search(p_message):
@@ -25,6 +29,7 @@ def handle_response(message, name) -> str:
 
 
         fTime = format_time(time)
+        print(str(fTime))
         #print(datetime.datetime.now().time())
         bot.schedule[name] = fTime
         return f'We will expect your arrival, {name}, at exactly {fTime}'
