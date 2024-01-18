@@ -10,7 +10,8 @@ schedule = dict()
 #--------------------------------------------------------------------------CONFIGURE/RUN BOT
 def run_discord_bot():
     #--------------------------------------------------------------------------BOT CONFIG SETTINGS
-    TOKEN = 'MTE5NTgwMjIzMTQzNDM4NzUzNw.GXRQ5g.DeaO0yuRmU1ysoNjNkySWxNKRjpmTMf8KOG_4c'
+    with open('token.txt') as f:
+        TOKEN = f.readline()
     channel_id = 1164238604940349501
     
     intents=discord.Intents.default()
