@@ -1,0 +1,3 @@
+Soon = 1hr
+I'll be on in a sec = 2 min
+1 sec = 1 min
